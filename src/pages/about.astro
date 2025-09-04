@@ -1,5 +1,27 @@
 ---
+const pageTitle = "About Me";
+const identity = {
+  //Obj
+  firstName: "Levitta",
+  country: "Indonesia",
+  occupation: "MD CSIE student and Cyber Security Intern",
+  hobbies: ["watching movies", "volley", "cooking and baking"], //array in obj
+};
 
+const skills = [
+  //array
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Astro",
+  "Write& Read Documentation",
+  "Chinese",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -10,14 +32,15 @@
     <meta name="generator" content={Astro.generator} />
     <title>My Astro Page</title>
   </head>
-
+  <!-- This is Render HTML -->
   <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
-    
-    <h1>My Astro Site</h1>
-    <h1>About Me</h1>
+
+    <h1>
+      {pageTitle},
+    </h1>
     <h2>... and my new Astro site!</h2>
 
     <p>
@@ -30,6 +53,41 @@
       back and see how my journey is going!
     </p>
 
-    
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName},</li>
+      <li>I live in {identity.country}, and I am {identity.occupation}.</li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Three of my hobbies are: {identity.hobbies[0]}
+            {identity.hobbies[1]}, and {identity.hobbies[2]}.
+          </li>
+        )
+      }
+    </ul>
+
+    <p>My skills are:</p>
+    <ul>
+      {
+        //map - calling and return each element array
+        //element name inside the paranthesis can be any pre-defined name
+        skills.map((strength) => <li>{strength}</li>)
+      }
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+    {
+      goal === 3 /*Condition*/ ? (
+        <p>My goal is to finish in 3 days.</p> /*JSX EXPRESSION; render: true */
+      ) : (
+        <p>My goal is not 3 days.</p>
+      ) /*JSX expression: wrong */
+
+      /*JSX in Curly Brackets LIKE THIS*/
+    }
+
+    <!-- This is Render HTML -->
   </body>
 </html>
