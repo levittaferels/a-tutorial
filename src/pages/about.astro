@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css'
+
 const pageTitle = "About Me";
 const identity = {
   //Obj
@@ -7,7 +9,6 @@ const identity = {
   occupation: "MD CSIE student and Cyber Security Intern",
   hobbies: ["watching movies", "volley", "cooking and baking"], //array in obj
 };
-
 const skills = [
   //array
   "HTML",
@@ -18,10 +19,13 @@ const skills = [
   "Write& Read Documentation",
   "Chinese",
 ];
-
 const happy = true;
 const finished = false;
 const goal = 3;
+const skillColor = "darkgreen";
+const fontWeight = "bold";
+const textCase = "lowercase";
+const fontStyle = "italic";
 ---
 
 <html lang="en">
@@ -31,6 +35,18 @@ const goal = 3;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>My Astro Page</title>
+    <style define:vars={{ skillColor, fontWeight, textCase, fontStyle }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+        font-style: var(--fontStyle);
+      }
+    </style>
   </head>
   <!-- This is Render HTML -->
   <body>
@@ -72,7 +88,7 @@ const goal = 3;
       {
         //map - calling and return each element array
         //element name inside the paranthesis can be any pre-defined name
-        skills.map((strength) => <li>{strength}</li>)
+        skills.map((strength) => <li class="skill">{strength}</li>)
       }
     </ul>
 

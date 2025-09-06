@@ -1,0 +1,24 @@
+html {
+  background-color: #ededed;
+  font-family: monospace;
+}
+
+body{
+  margin: 0 auto;
+  width: 90%;
+  max-width: 88ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+h1{
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+p{
+  margin: 1rem 0;
+}
