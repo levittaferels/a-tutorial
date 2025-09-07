@@ -1,0 +1,18 @@
+---
+// destruct props
+const { platform, username } = Astro.props;
+const lowercasedPlatform = platform.toLowerCase();
+---
+
+<style>
+  a {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #5b5b5b;
+    text-decoration: none;
+  }
+</style>
+
+<a href={`https://www.${lowercasedPlatform}.com/${username}`}
+target="_blank">{platform}</a>

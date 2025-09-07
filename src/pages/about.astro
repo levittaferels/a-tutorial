@@ -1,12 +1,15 @@
 ---
 import '../styles/global.css'
+// import Navigation from '../components/Navigation.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 
 const pageTitle = "About Me";
 const identity = {
   //Obj
   firstName: "Levitta",
-  country: "Indonesia",
-  occupation: "MD CSIE student and Cyber Security Intern",
+  country: "Indonesia", currCountry: "Taiwan",
+  occupation: "CSIE student + Cyber Security Intern",
   hobbies: ["watching movies", "volley", "cooking and baking"], //array in obj
 };
 const skills = [
@@ -22,8 +25,8 @@ const skills = [
 const happy = true;
 const finished = false;
 const goal = 3;
-const skillColor = "darkgreen";
-const fontWeight = "bold";
+const skillColor = "inherit";
+const fontWeight = "inherit";
 const textCase = "lowercase";
 const fontStyle = "italic";
 ---
@@ -34,8 +37,8 @@ const fontStyle = "italic";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>My Astro Page</title>
-    <style define:vars={{ skillColor, fontWeight, textCase, fontStyle }}>
+    <title>About</title>
+    <!-- <style define:vars={{ skillColor, fontWeight, textCase, fontStyle }}>
       h1 {
         color: purple;
         font-size: 4rem;
@@ -46,18 +49,16 @@ const fontStyle = "italic";
         text-transform: var(--textCase);
         font-style: var(--fontStyle);
       }
-    </style>
+    </style> -->
   </head>
   <!-- This is Render HTML -->
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-
+		<section class="contents">
+      <Header/>
     <h1>
       {pageTitle},
     </h1>
-    <h2>... and my new Astro site!</h2>
+    <h2>... and my new site!</h2>
 
     <p>
       I am working through Astro's introductory tutorial. This is the second
@@ -70,9 +71,11 @@ const fontStyle = "italic";
     </p>
 
     <p>Here are a few facts about me:</p>
-    <ul>
-      <li>My name is {identity.firstName},</li>
-      <li>I live in {identity.country}, and I am {identity.occupation}.</li>
+    <ul> 
+      <li>{identity.firstName},</li>
+      <li>Currently living in {identity.currCountry},
+        born and raised in {identity.country},
+        a {identity.occupation}.</li>
       {
         identity.hobbies.length >= 2 && (
           <li>
@@ -105,5 +108,10 @@ const fontStyle = "italic";
     }
 
     <!-- This is Render HTML -->
+    </section>
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>

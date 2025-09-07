@@ -1,6 +1,13 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css';
+// import Navigation from '../components/Navigation.astro';
+
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+
 const myName = "Levitta";
+const pageTitle = "Home";
 ---
 
 <html lang="en">
@@ -9,47 +16,24 @@ const myName = "Levitta";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>My Astro Page</title>
-		<style>
-			* {
-				background-color: #111111;
-				font-family: monospace;
-			}
-			h1 {
-				color: white;
-				font-size: 4rem;
-				font-weight: bold;
-			}
-			p {
-				color: white;
-				font-size: 1.5rem;
-			}
-			body {
-				margin: 2rem;
-			}
-			nav {
-				display: flex;
-				gap: 1.5rem;
-			}
-			nav > a {
-				color: whitesmoke;
-				font-size: 1.5em;
-			}
-		</style>
+		<title>{pageTitle}</title>
+		
 	</head>
-	<body>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/about/">About</a>
-			<a href="/blog/">Blog</a>
-		</nav>
 
+	<body>
+		<section class="contents">
+			<Header />
 		<h1>Hi, I'm <em>{myName}</em></h1>
 		<p>
 			and im building my curiosity on making website using <b>Astro Framework</b
 			>,
 		</p>
-		<p>it's been my third days when im writing this! [2025-09-05]</p>
+		<p>it's been my third days when im writing this! #2025-09-05</p>
 		<p>conclusion: slowly but surely its interesting haha.</p>
+		</section>
+		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>

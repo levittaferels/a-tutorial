@@ -8,7 +8,8 @@ image:
 pubDate: 2022-07-08
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---
-After three successful nights during my internship 
+# After three successful nights
+during my internship 
 in [Cyber Security Testing Engineering](https://google.com) 
 
 I made time learning Astro, and decided to try some more. 
